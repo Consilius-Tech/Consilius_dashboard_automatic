@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:15
+    container_name: bi_postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: admin_consilius
+      POSTGRES_PASSWORD: password_bi_2026
+      POSTGRES_DB: consilius_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
